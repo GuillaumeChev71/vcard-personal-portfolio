@@ -157,3 +157,13 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// init the map
+
+// var map = L.map('mapbox').setView([51.505, -0.09], 13);
+
+//       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         maxZoom: 19,
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+//       }).addTo(map);
