@@ -1881,3 +1881,19 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/*COMING SOON*/
+
+#comingsoonContainer{
+
+  display: contents;
+}
+
+
+#comingsoon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
