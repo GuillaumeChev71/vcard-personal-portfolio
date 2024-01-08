@@ -1519,10 +1519,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #CONTACT
    */
 
-  .mapbox {
+  /* .mapbox {
     height: 380px;
     border-radius: 18px;
-  }
+  } */
 
   .input-wrapper {
     gap: 30px;
@@ -1896,4 +1896,19 @@ textarea.form-input::-webkit-resizer { display: none; }
   align-items: center;
   overflow: hidden;
 }
+
+#map-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#map {
+  height: 300px;
+  width: 400px;
+  filter: grayscale(1) invert(1);
+}
+
+
 
