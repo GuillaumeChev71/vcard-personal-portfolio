@@ -140,6 +140,9 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+const articleMentions = document.getElementById('article-mentions');
+  
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
@@ -152,6 +155,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
+        articleMentions.classList.remove("active");
       }
     }
 
@@ -173,14 +177,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VpdG91bmVveiIsImEiOiJjbHI1Y3ZmZHMxbWI4MmpwO
 //mentions légales
 
 function clickMentions(){
-  var articleMentions = document.getElementById('article-mentions');
+  
   articleMentions.classList.add("active");
-  console.log('toto');
 
   for (let i = 0; i < pages.length; i++) {
       pages[i].classList.remove("active");
       navigationLinks[i].classList.remove("active");
-    
   }
 
   
