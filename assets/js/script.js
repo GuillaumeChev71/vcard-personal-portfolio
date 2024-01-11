@@ -161,14 +161,32 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // init the map
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VpdG91bmVveiIsImEiOiJjbHI1Y3ZmZHMxbWI4MmpwODRlMWZhdGxzIn0.Gl-6FFo3NLZ-AhSnOKp2pQ'; // Remplacez VOTRE_CLÉ_API_MAPBOX par votre clé d'API Mapbox
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VpdG91bmVveiIsImEiOiJjbHI1Y3ZmZHMxbWI4MmpwODRlMWZhdGxzIn0.Gl-6FFo3NLZ-AhSnOKp2pQ';
 
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11', // Style de carte par défaut
-            center: [3.876716, 43.610769], // Coordonnées du centre de la carte (ex: [3.876716, 43.610769] pour Montpellier)
+            center: [3.876716, 43.610769], //  pour Montpellier
             zoom: 12 // Niveau de zoom initial
         });
+
+//mentions légales
+
+function clickMentions(){
+  var articleMentions = document.getElementById('article-mentions');
+  articleMentions.classList.add("active");
+  console.log('toto');
+
+  for (let i = 0; i < pages.length; i++) {
+      pages[i].classList.remove("active");
+      navigationLinks[i].classList.remove("active");
+    
+  }
+
+  
+}
+
+
 
 
 
