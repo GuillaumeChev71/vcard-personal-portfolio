@@ -184,8 +184,22 @@ function clickMentions(){
       pages[i].classList.remove("active");
       navigationLinks[i].classList.remove("active");
   }
+}
 
-  
+function lancerFonctionPHP() {
+  $.ajax({
+     url: 'api.php',
+     type: 'POST',
+     contentType: 'application/json',
+     data: JSON.stringify({ action: 'maFonctionPHP' }),
+     success: function(response) {
+        console.log(response);
+        // Traitez la réponse si nécessaire
+     },
+     error: function(error) {
+        console.error('Erreur AJAX :', error);
+     }
+  });
 }
 
 
