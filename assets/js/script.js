@@ -187,19 +187,27 @@ function clickMentions(){
 }
 
 function lancerFonctionPHP() {
+
+  event.preventDefault();
+  
+  // console.log('toto');
   $.ajax({
-     url: 'api.php',
-     type: 'POST',
-     contentType: 'application/json',
-     data: JSON.stringify({ action: 'maFonctionPHP' }),
-     success: function(response) {
+    url: './api.php',
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({
+        action: 'maFonctionPHP',
+        nomSender: document.getElementById("nomSender").value,
+        mailSender: document.getElementById("mailSender").value,
+        messageSender: document.getElementById("messageSender").value
+    }),
+    success: function(response) {
         console.log(response);
-        // Traitez la réponse si nécessaire
-     },
-     error: function(error) {
+    },
+    error: function(error) {
         console.error('Erreur AJAX :', error);
-     }
-  });
+    }
+});
 }
 
 

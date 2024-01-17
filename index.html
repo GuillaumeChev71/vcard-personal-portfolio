@@ -439,7 +439,7 @@
 
               <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
-              <time datetime="2021-06-14">14 June, 2021</time>
+              <time datetime="2021-06-14"></time>
 
               <div data-modal-text>
                 <p>
@@ -1155,17 +1155,17 @@
 
           <h3 class="h3 form-title">Formulaire de contact</h3>
 
-          <form action="#" class="form" data-form>
+          <form class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Nom et prénom" required data-form-input>
+              <input type="text" name="fullname" class="form-input" placeholder="Nom et prénom" id="nomSender" required data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Adresse mail" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Adresse mail" id="mailSender" required data-form-input>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Votre message" required data-form-input></textarea>
+            <textarea name="message" class="form-input" placeholder="Votre message" id="messageSender" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" disabled data-form-btn onclick="lancerFonctionPHP()">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Envoyer</span>
             </button>
