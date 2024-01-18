@@ -2,6 +2,8 @@
 
 
 
+
+
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
@@ -186,11 +188,23 @@ function clickMentions(){
   }
 }
 
+function afficheSnackbar(message) {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  x.innerHTML=message;
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
 function lancerFonctionPHP() {
 
   event.preventDefault();
-  
-  // console.log('toto');
+
   $.ajax({
     url: './api.php',
     type: 'POST',
@@ -202,10 +216,19 @@ function lancerFonctionPHP() {
         messageSender: document.getElementById("messageSender").value
     }),
     success: function(response) {
-        console.log(response);
+        // console.log(response);
+        afficheSnackbar("Message envoyé ! <img src='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Beaming%20Face%20with%20Smiling%20Eyes.png' alt='Beaming Face with Smiling Eyes' width='25' height='25' />");
+        //vide les champs du formulaire
+        document.getElementById("nomSender").value="";
+        document.getElementById("mailSender").value="";
+        document.getElementById("messageSender").value="";
+
+
     },
     error: function(error) {
+      afficheSnackbar("Problème d'envoi ! <img src='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Confounded%20Face.png' alt='Confounded Face' width='25' height='25' />");
         console.error('Erreur AJAX :', error);
+        
     }
 });
 }

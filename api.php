@@ -4,9 +4,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    if (isset($data['action']) && $data['action'] === 'maFonctionPHP') {
       // Récupérez les paramètres
-      $nomSender = isset($_POST['nomSender']) ? $_POST['nomSender'] : '';
-      $mailSender = isset($_POST['mailSender']) ? $_POST['mailSender'] : '';
-      $messageSender = isset($_POST['messageSender']) ? $_POST['messageSender'] : '';
+      $nomSender = $data['nomSender'];
+      $mailSender = $data['mailSender'];
+      $messageSender = $data['messageSender']; 
 
       // Appelez votre fonction avec les paramètres
       maFonctionPHP($nomSender,$mailSender,$messageSender);
@@ -17,7 +17,9 @@ function maFonctionPHP($nomSender,$mailSender,$messageSender) {
    // Code de votre fonction PHP
    $to = 'dev@itgcdev.fr';
     $subject = 'Prise de contact';
-    $message = '$messageSender';
+    $message = "Nom : "."$nomSender\n".
+    "Mail : "."$mailSender\n".
+    "Message : "."$messageSender\n";
 
     // Vous pouvez ajouter des en-têtes supplémentaires si nécessaire
     $headers = 'From: contact@example.com' . "\r\n" .
@@ -28,10 +30,10 @@ function maFonctionPHP($nomSender,$mailSender,$messageSender) {
     $success = mail($to, $subject, $message, $headers);
 
     if ($success) {
-        echo 'E-mail envoyé avec succès!';
+        // echo 'E-mail envoyé avec succès!';
         return true;
     } else {
-        echo 'Erreur lors de l\'envoi de l\'e-mail.';
+        // echo 'Erreur lors de l\'envoi de l\'e-mail.';
         return false;
     }
 }
