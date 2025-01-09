@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Article Section -->
+    <article class="blog-article">
+
+        <header>
+            <h1 class="h1 article-title">Understanding JavaScript Closures</h1>
+            <div class="article-meta">
+                <p class="article-category">JavaScript</p>
+                <span class="dot"></span>
+                <time datetime="2025-01-01">Jan 1, 2025</time>
+            </div>
+        </header>
+
+        <section class="article-content">
+            <figure class="article-banner-box">
+                <img src="./assets/images/blog-1.jpg" alt="Understanding JavaScript Closures" loading="lazy">
+            </figure>
+
+            <p>
+                JavaScript closures are a powerful and often misunderstood feature of the language. At their core,
+                closures allow a function to retain access to its lexical scope, even when the function is executed
+                outside that scope. This article will demystify closures, provide examples, and explain their practical
+                applications.
+            </p>
+
+            <h2>What is a Closure?</h2>
+            <p>
+                A closure is created when a function is defined inside another function and gains access to the outer
+                function's variables. This is possible because of JavaScript's lexical scoping.
+            </p>
+
+            <pre>
+        <code>
+function outerFunction() {
+  let outerVariable = 'I am from outer scope';
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+const closureFunction = outerFunction();
+closureFunction(); // Logs: "I am from outer scope"
+        </code>
+      </pre>
+
+            <h2>Why Use Closures?</h2>
+            <p>
+                Closures enable powerful programming patterns such as data hiding, function factories, and callbacks.
+                For instance, closures can be used to create private variables:
+            </p>
+
+            <pre>
+        <code>
+function createCounter() {
+  let count = 0;
+
+  return function() {
+    count++;
+    return count;
+  };
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+        </code>
+      </pre>
+
+            <h2>Practical Applications</h2>
+            <ul>
+                <li>Creating private variables.</li>
+                <li>Implementing partial application or currying.</li>
+                <li>Event handlers and callback functions.</li>
+            </ul>
+
+            <p>
+                Understanding closures is key to mastering JavaScript. By using closures effectively, you can write more
+                modular and maintainable code.
+            </p>
+        </section>
+
+        <footer class="article-footer">
+            <p>Written by <strong>John Doe</strong> on Jan 1, 2025</p>
+            <nav class="article-navigation">
+                <a href="blog.html">&#8592; Back to Blog</a>
+            </nav>
+        </footer>
+
+    </article>
+
+</body>
+
+</html>
